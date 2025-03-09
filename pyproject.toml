@@ -1,0 +1,32 @@
+[project]
+name = "tools"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.1.8",
+    "mistralai>=1.5.1",
+    "rich>=13.9.4",
+    "structlog>=25.1.0",
+]
+
+[tool.ruff]
+# https://docs.astral.sh/ruff/configuration/
+line-length = 100
+
+[tool.ruff.lint]
+
+select = ["ALL"]
+
+ignore = [
+  "E501", # line-too-long
+  "D100", # docstring-public-module
+  "D103", # docstring-public-function
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "ruff>=0.9.10",
+]
